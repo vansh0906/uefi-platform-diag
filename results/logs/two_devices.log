@@ -1,0 +1,46 @@
+[   1.98] BdsDxe: loading Boot0001 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[   1.99] BdsDxe: starting Boot0001 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[   1.99] 
+[   1.99] PD: START PlatformDiag 1.0 firmware="EDK II" rev 0x10000 uefi 2.7
+[   2.00] PD: BOOT count=1 variable=Success
+[   2.00] PD: TEST bmc.device_id PASS device 0x20 rev 0, firmware 0.00, IPMI 2.0, mfg 0x00000, 34 status polls
+[   2.00] PD: TEST bmc.self_test SKIP BMC does not implement Get Self Test Results (completion code 0xC1)
+[   2.01] PD: WDT last boot: expiration flags 0x00
+[   2.01] PD: TEST bmc.watchdog_arm PASS BIOS/POST timer, 10 s, hard reset
+[   2.01] PD: SEL logged record 0x0000: Firmware progress: PCI initialization
+[   2.01] PD: PCI 00:00.0 8086:29C0 class 060000
+[   2.01] PD: PCI 00:01.0 1234:1111 class 030000
+[   2.01] PD: PCI 00:02.0 1234:11E8 class 00FF00
+[   2.01] PD: PCI 00:03.0 1234:11E8 class 00FF00
+[   2.01] PD: PCI 00:1F.0 8086:2918 class 060100
+[   2.01] PD: PCI 00:1F.2 8086:2922 class 010601
+[   2.01] PD: PCI 00:1F.3 8086:2930 class 0C0500
+[   2.01] PD: PCI devices=7 edu=2
+[   2.02] PD: TEST driver.load PASS LoadImage/StartImage \EduDxe.efi: Success
+[   2.02] PD: TEST driver.bind PASS 2 of 2 edu devices bound
+[   2.02] PD: TEST edu0.id PASS 00:02.0 id 0x010000ED
+[   2.02] PD: TEST edu0.liveness PASS 4/4 patterns inverted
+[   2.03] PD: TEST edu0.factorial PASS 16/16 results match (n = 0..15, 32-bit wrap)
+[   2.23] PD: TEST edu0.dma_bounce PASS 4096 B out and back, host 0xDE23018, bus 0xDE26000, Success/Success
+[   2.43] PD: DMA direct host 0xE5B1000 above_28bit=0 bytes_wrong=0
+[   2.54] PD: TEST edu0.dma_guard PASS direct write to 0xE5B1000: Success
+[   2.54] PD: TEST edu1.id PASS 00:03.0 id 0x010000ED
+[   2.54] PD: TEST edu1.liveness PASS 4/4 patterns inverted
+[   2.54] PD: TEST edu1.factorial PASS 16/16 results match (n = 0..15, 32-bit wrap)
+[   2.75] PD: TEST edu1.dma_bounce PASS 4096 B out and back, host 0xDE23018, bus 0xDE25000, Success/Success
+[   2.95] PD: DMA direct host 0xE5B1000 above_28bit=0 bytes_wrong=0
+[   3.06] PD: TEST edu1.dma_guard PASS direct write to 0xE5B1000: Success
+[   3.09] PD: TEST driver.reconnect PASS 25 cycles x 2 devices, 0 failures
+[   3.09] PD: TEST driver.no_leak PASS free pages 52824 -> 52824 (delta 0)
+[   3.10] PD: TEST driver.unload PASS UnloadImage Success, 0 EDU protocols left
+[   3.10] PD: TEST smbios.entry_point PASS SMBIOS 2.x entry point, version 2.8, table 0xF587000, 410 bytes
+[   3.11] PD: SMBIOS bios vendor="EDK II" version="edk2-stable202408-prebuilt.qemu.org" date="08/13/2024"
+[   3.11] PD: SMBIOS system manufacturer="QEMU" product="Standard PC (Q35 + ICH9, 2009)"
+[   3.11] PD: SMBIOS memory devices=1 total_mb=256
+[   3.11] PD: TEST smbios.memory PASS 1 type-17 records, 256 MiB
+[   3.11] PD: SEL logged record 0x0001: Firmware progress: diagnostics complete, starting OS boot
+[   3.12] PD: SEL 0x0000 gen 0x0001 sensor 0x0F Firmware progress: PCI initialization
+[   3.12] PD: SEL 0x0001 gen 0x0001 sensor 0x0F Firmware progress: diagnostics complete, starting OS boot
+[   3.12] PD: TEST sel.readback PASS 2 entries read, 2 from firmware, last = boot
+[   3.12] PD: TEST bmc.watchdog_disarm PASS Success, timer use 0x02, countdown left 0
+[   3.12] PD: RESULT PASS 21/21

@@ -1,0 +1,20 @@
+## @file
+#  Hardware-independent diagnostics logic (also built and tested on the host).
+#
+#  SPDX-License-Identifier: MIT
+##
+
+[Defines]
+  INF_VERSION    = 0x00010017
+  BASE_NAME      = DiagCoreLib
+  FILE_GUID      = 3B1F0C8A-4E2D-4C51-9F0A-6E2B7D4A1C55
+  MODULE_TYPE    = BASE
+  VERSION_STRING = 1.0
+  LIBRARY_CLASS  = DiagCoreLib
+
+[Sources]
+  DiagCore.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  HwDiagPkg/HwDiagPkg.dec

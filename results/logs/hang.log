@@ -1,0 +1,61 @@
+[   1.92] BdsDxe: loading Boot0001 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[   1.92] BdsDxe: starting Boot0001 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[   1.92] 
+[   1.92] PD: START PlatformDiag 1.0 firmware="EDK II" rev 0x10000 uefi 2.7
+[   1.93] PD: BOOT count=1 variable=Success
+[   1.93] PD: TEST bmc.device_id PASS device 0x20 rev 0, firmware 0.00, IPMI 2.0, mfg 0x00000, 34 status polls
+[   1.93] PD: TEST bmc.self_test SKIP BMC does not implement Get Self Test Results (completion code 0xC1)
+[   1.93] PD: WDT last boot: expiration flags 0x00
+[   1.93] PD: TEST bmc.watchdog_arm PASS BIOS/POST timer, 10 s, hard reset
+[   1.94] PD: SEL logged record 0x0000: Firmware progress: PCI initialization
+[   1.94] PD: PCI 00:00.0 8086:29C0 class 060000
+[   1.94] PD: PCI 00:01.0 1234:1111 class 030000
+[   1.94] PD: PCI 00:02.0 1234:11E8 class 00FF00
+[   1.94] PD: PCI 00:1F.0 8086:2918 class 060100
+[   1.94] PD: PCI 00:1F.2 8086:2922 class 010601
+[   1.94] PD: PCI 00:1F.3 8086:2930 class 0C0500
+[   1.94] PD: PCI devices=6 edu=1
+[   1.94] PD: HANG simulating a stuck PCI init stage (POST watchdog armed)
+[  14.24] BdsDxe: loading Boot0001 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[  14.24] BdsDxe: starting Boot0001 "UEFI QEMU HARDDISK QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[  14.25] 
+[  14.25] PD: START PlatformDiag 1.0 firmware="EDK II" rev 0x10000 uefi 2.7
+[  14.25] PD: BOOT count=2 variable=Success
+[  14.26] PD: TEST bmc.device_id PASS device 0x20 rev 0, firmware 0.00, IPMI 2.0, mfg 0x00000, 34 status polls
+[  14.26] PD: TEST bmc.self_test SKIP BMC does not implement Get Self Test Results (completion code 0xC1)
+[  14.26] PD: WDT last boot: expiration flags 0x04 - POST watchdog expired, booting in safe mode
+[  14.26] PD: SEL logged record 0x0001: Firmware progress: safe-mode boot after watchdog reset
+[  14.26] PD: TEST bmc.watchdog_arm PASS BIOS/POST timer, 10 s, hard reset
+[  14.26] PD: SEL logged record 0x0002: Firmware progress: PCI initialization
+[  14.26] PD: PCI 00:00.0 8086:29C0 class 060000
+[  14.26] PD: PCI 00:01.0 1234:1111 class 030000
+[  14.27] PD: PCI 00:02.0 1234:11E8 class 00FF00
+[  14.27] PD: PCI 00:1F.0 8086:2918 class 060100
+[  14.27] PD: PCI 00:1F.2 8086:2922 class 010601
+[  14.27] PD: PCI 00:1F.3 8086:2930 class 0C0500
+[  14.27] PD: PCI devices=6 edu=1
+[  14.27] PD: SAFE MODE skipping the stage that hung on the previous boot
+[  14.27] PD: TEST driver.load PASS LoadImage/StartImage \EduDxe.efi: Success
+[  14.28] PD: TEST driver.bind PASS 1 of 1 edu devices bound
+[  14.28] PD: TEST edu0.id PASS 00:02.0 id 0x010000ED
+[  14.28] PD: TEST edu0.liveness PASS 4/4 patterns inverted
+[  14.28] PD: TEST edu0.factorial PASS 16/16 results match (n = 0..15, 32-bit wrap)
+[  14.48] PD: TEST edu0.dma_bounce PASS 4096 B out and back, host 0xDE26018, bus 0xDE28000, Success/Success
+[  14.68] PD: DMA direct host 0xDE25000 above_28bit=0 bytes_wrong=0
+[  14.79] PD: TEST edu0.dma_guard PASS direct write to 0xDE25000: Success
+[  14.80] PD: TEST driver.reconnect PASS 25 cycles x 1 devices, 0 failures
+[  14.80] PD: TEST driver.no_leak PASS free pages 52825 -> 52825 (delta 0)
+[  14.81] PD: TEST driver.unload PASS UnloadImage Success, 0 EDU protocols left
+[  14.82] PD: TEST smbios.entry_point PASS SMBIOS 2.x entry point, version 2.8, table 0xF587000, 410 bytes
+[  14.82] PD: SMBIOS bios vendor="EDK II" version="edk2-stable202408-prebuilt.qemu.org" date="08/13/2024"
+[  14.82] PD: SMBIOS system manufacturer="QEMU" product="Standard PC (Q35 + ICH9, 2009)"
+[  14.82] PD: SMBIOS memory devices=1 total_mb=256
+[  14.82] PD: TEST smbios.memory PASS 1 type-17 records, 256 MiB
+[  14.82] PD: SEL logged record 0x0003: Firmware progress: diagnostics complete, starting OS boot
+[  14.83] PD: SEL 0x0000 gen 0x0001 sensor 0x0F Firmware progress: PCI initialization
+[  14.83] PD: SEL 0x0001 gen 0x0001 sensor 0x0F Firmware progress: safe-mode boot after watchdog reset
+[  14.83] PD: SEL 0x0002 gen 0x0001 sensor 0x0F Firmware progress: PCI initialization
+[  14.83] PD: SEL 0x0003 gen 0x0001 sensor 0x0F Firmware progress: diagnostics complete, starting OS boot
+[  14.83] PD: TEST sel.readback PASS 4 entries read, 4 from firmware, last = boot
+[  14.84] PD: TEST bmc.watchdog_disarm PASS Success, timer use 0x02, countdown left 0
+[  14.84] PD: RESULT PASS 16/16 (safe mode)

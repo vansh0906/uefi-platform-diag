@@ -1,0 +1,24 @@
+## @file
+#  Platform diagnostics package: an edu PCI driver, a KCS/IPMI client and a POST-style diagnostics application.
+#
+#  SPDX-License-Identifier: MIT
+##
+
+[Defines]
+  DEC_SPECIFICATION = 0x00010017
+  PACKAGE_NAME      = HwDiagPkg
+  PACKAGE_GUID      = 1D185279-BFE7-4382-8D83-D0297D79987A
+  PACKAGE_VERSION   = 1.0
+
+[Includes]
+  Include
+
+[LibraryClasses]
+  DiagCoreLib|Include/Library/DiagCoreLib.h
+  IpmiKcsLib|Include/Library/IpmiKcsLib.h
+
+[Guids]
+  gPlatformDiagVariableGuid = { 0x00783e7f, 0x7af6, 0x422e, { 0x9c, 0xcf, 0xd2, 0xe6, 0x02, 0xd4, 0x8e, 0xe1 } }
+
+[Protocols]
+  gEduDeviceProtocolGuid    = { 0x8fafd8f3, 0x12ba, 0x4729, { 0xaf, 0x45, 0x01, 0xcc, 0x3c, 0x5e, 0xaa, 0x1f } }

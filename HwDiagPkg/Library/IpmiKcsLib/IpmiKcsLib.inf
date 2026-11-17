@@ -1,0 +1,25 @@
+## @file
+#  KCS system interface port I/O for DiagCoreLib's KCS state machine.
+#
+#  SPDX-License-Identifier: MIT
+##
+
+[Defines]
+  INF_VERSION    = 0x00010017
+  BASE_NAME      = IpmiKcsLib
+  FILE_GUID      = 7A42D5E1-2B6C-4F8E-A1D3-5C9E0F7B3A21
+  MODULE_TYPE    = UEFI_DRIVER
+  VERSION_STRING = 1.0
+  LIBRARY_CLASS  = IpmiKcsLib|UEFI_APPLICATION UEFI_DRIVER DXE_DRIVER
+
+[Sources]
+  IpmiKcsLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  HwDiagPkg/HwDiagPkg.dec
+
+[LibraryClasses]
+  IoLib
+  UefiBootServicesTableLib
+  DiagCoreLib

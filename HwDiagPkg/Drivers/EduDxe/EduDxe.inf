@@ -1,0 +1,35 @@
+## @file
+#  UEFI Driver Model driver for the QEMU edu PCI device.
+#
+#  SPDX-License-Identifier: MIT
+##
+
+[Defines]
+  INF_VERSION    = 0x00010017
+  BASE_NAME      = EduDxe
+  FILE_GUID      = 0D248498-FAF1-4467-9760-9D430129E4AB
+  MODULE_TYPE    = UEFI_DRIVER
+  VERSION_STRING = 1.0
+  ENTRY_POINT    = EduDxeEntry
+  UNLOAD_IMAGE   = EduDxeUnload
+
+[Sources]
+  EduDxe.c
+  ComponentName.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  HwDiagPkg/HwDiagPkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  UefiLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  DebugLib
+  DiagCoreLib
+
+[Protocols]
+  gEfiPciIoProtocolGuid          ## TO_START
+  gEduDeviceProtocolGuid         ## BY_START

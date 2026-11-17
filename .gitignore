@@ -1,0 +1,6 @@
+.edk2-workspace/
+build/
+tests/host/test_diagcore
+__pycache__/
+.pytest_cache/
+.DS_Store

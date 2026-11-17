@@ -1,0 +1,22 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  host-tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: make -C tests/host check
+  firmware:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y qemu-system-x86 ovmf nasm uuid-dev build-essential python3
+      - run: git clone --depth 1 --branch edk2-stable202411 https://github.com/tianocore/edk2.git ../edk2
+      - run: git -C ../edk2 submodule update --init --depth 1 BaseTools/Source/C/BrotliCompress/brotli MdeModulePkg/Library/BrotliCustomDecompressLib/brotli MdePkg/Library/MipiSysTLib/mipisyst
+      - run: tools/build.sh ../edk2
+      - run: python3 tools/run_qemu.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: serial-logs
+          path: results/

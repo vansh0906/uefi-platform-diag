@@ -1,0 +1,44 @@
+## @file
+#  POST-style platform diagnostics: BMC over KCS, PCI and the edu driver, memory leak check, SMBIOS, SEL.
+#
+#  SPDX-License-Identifier: MIT
+##
+
+[Defines]
+  INF_VERSION    = 0x00010017
+  BASE_NAME      = PlatformDiag
+  FILE_GUID      = 6E3C1F2A-9B4D-4E77-8C21-0F5A7D3E9B64
+  MODULE_TYPE    = UEFI_APPLICATION
+  VERSION_STRING = 1.0
+  ENTRY_POINT    = PlatformDiagMain
+
+[Sources]
+  PlatformDiag.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  HwDiagPkg/HwDiagPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  MemoryAllocationLib
+  BaseMemoryLib
+  BaseLib
+  DevicePathLib
+  PrintLib
+  DiagCoreLib
+  IpmiKcsLib
+
+[Guids]
+  gEfiSmbios3TableGuid           ## SOMETIMES_CONSUMES
+  gEfiSmbiosTableGuid            ## SOMETIMES_CONSUMES
+  gPlatformDiagVariableGuid      ## CONSUMES ## Variable:L"PlatformDiagBoots"
+
+[Protocols]
+  gEfiPciIoProtocolGuid          ## CONSUMES
+  gEfiLoadedImageProtocolGuid    ## CONSUMES
+  gEfiSimpleFileSystemProtocolGuid ## CONSUMES
+  gEduDeviceProtocolGuid         ## CONSUMES
